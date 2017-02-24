@@ -1,4 +1,10 @@
 global outb
+global inb
+
+inb:
+	mov dx, [esp + 4]
+	in al, dx
+	ret
 
 outb:
 	mov al, [esp + 8]
