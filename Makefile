@@ -9,6 +9,8 @@ all: kernel.elf
 
 kernel.elf: ld $(LDFLAGS) $(OBJECTS) -o kernel.elf
 
+main: $(CC) kmain.c
+
 os.iso: kernel.elf
 	cp kernel.elf iso/boot/kernel.elf
 	genisoimage -R \
